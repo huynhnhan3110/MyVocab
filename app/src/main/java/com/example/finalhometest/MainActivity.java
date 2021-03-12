@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     BarChart chart;
     protected DataSource mDataSource;
 //    Thong tin nay thay doi tren nhanh first_change
+    // them commit thu xem
     private MenuItem iconNotlearn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
