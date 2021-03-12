@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.finalhometest.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_taikhoan"
+        android:name="com.example.finalhometest.ui.taikhoan.TaiKhoanFragment"
+        android:label="Tài khoản"
+        tools:layout="@layout/fragment_taikhoan" />
+    <fragment
+        android:id="@+id/nav_tuchuanbi"
+        android:name="com.example.finalhometest.ui.tuchuanbi.DanhSachTuChuanBi"
+        android:label="Tự chuẩn bị"
+        tools:layout="@layout/fragment_tuchuanbi" >
+    </fragment>
+    <fragment
+        android:id="@+id/nav_themtuvung"
+        android:name="com.example.finalhometest.ui.themtu.ThemTuFragment"
+        android:label="Thêm từ vựng"
+        tools:layout="@layout/fragment_themtu" />
+
+    <fragment
+        android:id="@+id/nav_ontu"
+        android:name="com.example.finalhometest.ui.ontu.OnTuFragment"
+        android:label="Ôn từ vựng"
+        tools:layout="@layout/fragment_ontu">
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_ontuchuanbi"
+        android:name="com.example.finalhometest.ui.hoctuchuanbi.OnTuChuanbiFragment"
+        android:label="Ôn từ vựng chuan bi va da co"
+        tools:layout="@layout/fragment_ontuchuanbi" />
+
+    <fragment
+        android:id="@+id/nav_hoctucosan"
+        android:name="com.example.finalhometest.ui.hoctucosan.HocTuCoSanFragment"
+        android:label="Học từ vựng có sẵn"
+        tools:layout="@layout/fragment_hoctucosan" />
+
+    <fragment
+        android:id="@+id/nav_hoctuchuanbi"
+        android:name="com.example.finalhometest.ui.hoctuchuanbi.HocTuChuanBiFragment"
+        android:label="Học từ chuan bi"
+        tools:layout="@layout/fragment_hoctuchuanbi">
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_gopy"
+        android:name="com.example.finalhometest.ui.gopy.GopYFragment"
+        android:label="Góp ý / Liên hệ"
+        tools:layout="@layout/fragment_gopy" />
+
+
+    <fragment
+        android:id="@+id/nav_ketquathemtu"
+        android:name="com.example.finalhometest.ui.ketquathemtu.KetQuaFragment"
+        android:label="Kết quả thêm từ"
+        tools:layout="@layout/fragment_ketqua" />
+
+    <fragment
+        android:id="@+id/nav_hoclai"
+        android:name="com.example.finalhometest.ui.hoclaitu.HocLaiTuFragment"
+        android:label="Học lại"
+        tools:layout="@layout/fragment_hoclaitu" />
+
+    <fragment
+        android:id="@+id/nav_listviewRecord"
+        android:name="com.example.finalhometest.ui.listrecord.ListRecordFragment"
+        android:label="Xem từ"
+        tools:layout="@layout/fragment_listrecord" />
+</navigation>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/undraw_profile"
+            app:civ_border_width="2dp"
+            android:layout_centerHorizontal="true"
+            app:civ_border_color="#FF9800"/>
+        <TextView
+            android:layout_below="@id/avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your name"
+            android:layout_centerHorizontal="true"
+            android:textColor="#F86D6D"
+            android:layout_marginTop="10dp"
+
+            android:textSize="25sp"
+            android:fontFamily="@font/utmsharmay"
+            android:layout_marginBottom="50dp"
+            android:id="@+id/yourname"/>
+
+
+        <RelativeLayout
+            android:layout_below="@id/yourname"
+            android:layout_width="match_parent"
+            android:id="@+id/titletwo"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/titleimg1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_timeline_24"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="23sp"
+                android:layout_toRightOf="@id/titleimg1"
+                android:fontFamily="@font/utmsharmay"
+                android:text="Điểm danh mỗi ngày "
+                android:id="@+id/month"/>
+
+            <View
+                android:layout_below="@id/month"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#E6DFD5D5"></View>
+        </RelativeLayout>
+
+        <com.applandeo.materialcalendarview.CalendarView
+            android:layout_marginTop="10dp"
+            android:id="@+id/calendarView"
+            android:layout_below="@+id/titletwo"
+            android:layout_width="match_parent"
+            app:headerColor="#1a237e"
+            app:headerLabelColor="#fff"
+            app:daysLabelsColor="#fff"
+            app:abbreviationsBarColor="#303f9f"
+            app:abbreviationsLabelsColor="#fff"
+            app:pagesColor="#3f51b5"
+            android:layout_centerHorizontal="true"
+            app:firstDayOfWeek="monday"
+            app:todayLabelColor="#FFEB3B"
+            android:layout_height="wrap_content"/>
+<!--        app:previousButtonSrc="@drawable/arrow_left_24_month"-->
+<!--        app:forwardButtonSrc="@drawable/arrow_right_24_month"-->
+
+        <RelativeLayout
+            android:layout_below="@id/calendarView"
+            android:layout_width="match_parent"
+            android:id="@+id/titlethree"
+            android:layout_marginTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/titleimg2"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_baseline_verified_24"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="23sp"
+            android:layout_toRightOf="@+id/titleimg2"
+            android:fontFamily="@font/utmsharmay"
+            android:text="Thành tích của bạn "
+
+            android:id="@+id/chucnangketiep"/>
+            <View
+                android:layout_below="@id/chucnangketiep"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#E6DFD5D5"></View>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/textviewgiaithich"
+            android:layout_below="@id/titlethree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Show ra hết để coi, chừng nào thống nhất về cách tính này thì sẽ ẩn đi và hiện theo thực tế"/>
+        <HorizontalScrollView
+            android:id="@+id/horizontalbadge"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/textviewgiaithich"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:visibility="visible"
+                    android:padding="14dp"
+                    android:id="@+id/badges1"
+                    android:layout_height="100dp"
+                    android:src="@drawable/badges1"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:visibility="visible"
+                    android:padding="14dp"
+                    android:id="@+id/badges2"
+                    android:src="@drawable/badges2"/>
+                <ImageView
+                    android:padding="14dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:visibility="visible"
+                    android:src="@drawable/badges3"/>
+                <ImageView
+                    android:padding="14dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:visibility="visible"
+                    android:src="@drawable/badges4"/>
+                <ImageView
+                    android:padding="14dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:visibility="visible"
+                    android:src="@drawable/badges2"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+
+
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/horizontalbadge"
+            android:layout_width="match_parent"
+            android:id="@+id/titlefour"
+            android:paddingRight="20dp"
+
+            android:paddingLeft="10dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/theodoiimg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_add_chart_24"/>
+
+            <TextView
+
+                android:id="@+id/theodoithemtu"
+                android:layout_width="wrap_content"
+                android:layout_toRightOf="@id/theodoiimg"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/utmsharmay"
+                android:text="Theo dõi thêm từ "
+                android:textSize="23sp" />
+            <View
+                android:layout_below="@id/theodoithemtu"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="#E6DFD5D5"></View>
+        </RelativeLayout>
+
+
+        <!-- số từ thêm mỗi ngày -->
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart"
+            android:layout_below="@+id/titlefour"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</ScrollView>

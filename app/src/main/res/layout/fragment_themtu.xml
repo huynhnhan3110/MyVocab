@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ui.themtu.ThemTuFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="63dp"
+        android:layout_marginLeft="40dp"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="36dp"
+        android:id="@+id/relativeborder"
+        android:background="@drawable/mybackgroundthemtu"
+        android:layout_height="430dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="22dp"
+            android:id="@+id/consecutiveNumberTV"
+            android:text="Còn 10 từ nữa"/>
+        <TableLayout
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="300dp"
+
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TableRow
+                android:layout_width="match_parent"
+                android:minHeight="70dp"
+                android:layout_marginBottom="50dp"
+                android:layout_height="wrap_content"
+                >
+
+                <EditText
+                    android:textSize="20sp"
+                    android:layout_weight="2"
+                    android:layout_marginTop="15dp"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editWord"
+                    android:backgroundTint="#f0bd48"
+
+                    android:textAlignment="center"
+                    android:hint="Nhập từ vựng muốn thêm"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_marginBottom="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <EditText
+                    android:layout_weight="2"
+                    android:textSize="20sp"
+
+
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editNghia"
+                    android:backgroundTint="#f0bd48"
+                    android:hint="Nghĩa tiếng việt"
+                    />
+            </TableRow>
+            <TableRow
+
+                android:minHeight="60dp"
+                android:layout_marginBottom="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editLuuY"
+                    android:inputType="textCapSentences"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="#f0bd48"
+                    android:hint="Lưu ý (nếu có)"
+                    android:layout_weight="2"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/relativeborder"
+        android:orientation="horizontal">
+        <ImageButton
+            android:background="@null"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_weight="3"
+            android:id="@+id/finishadd"
+            android:src="@drawable/ic_baseline_clear_48"
+            android:contentDescription="cleartext" />
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_weight="7"/>
+        <ImageButton
+            android:background="@null"
+            android:id="@+id/addnewword"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_baseline_check_24"
+            android:contentDescription="addwordd" />
+    </LinearLayout>
+
+
+</RelativeLayout>

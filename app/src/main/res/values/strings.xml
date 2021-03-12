@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Noah - My Vocab</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Nhânnnnnn</string>
+    <string name="nav_header_subtitle">huynhnhan.dev@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="nottle" id="@+id/styled_welcome_message">We are <b><i>so</i></b> glad to see you.</string>
+    <string name="menu_home">Home</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="material_calendar_monday">T2</string>
+    <string name="material_calendar_tuesday">T3</string>
+    <string name="material_calendar_wednesday">T4</string>
+    <string name="material_calendar_thursday">T5</string>
+    <string name="material_calendar_friday">T6</string>
+    <string name="material_calendar_saturday">T7</string>
+    <string name="material_calendar_sunday">CN</string>
+
+    <array name="material_calendar_months_array">
+        <item>Tháng một</item>
+        <item>Tháng hai</item>
+        <item>Tháng ba</item>
+        <item>Tháng tư</item>
+        <item>Tháng năm</item>
+        <item>Tháng sáu</item>
+        <item>Tháng bảy</item>
+        <item>Tháng tám</item>
+        <item>Tháng chín</item>
+        <item>Tháng mười</item>
+        <item>Tháng mười một</item>
+        <item>Tháng mười hai</item>
+    </array>
+
+    <string name="material_calendar_today_button">Hôm nay</string>
+    <string name="material_calendar_positive_button">OK</string>
+    <string name="material_calendar_negative_button">Cancel</string>
+</resources>

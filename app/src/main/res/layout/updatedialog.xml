@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:layout_marginBottom="20dp"
+        android:textColor="#333"
+        android:text="Chỉnh sửa từ vựng"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Từ vựng"
+        android:ems="10"
+        android:id="@+id/wordUpdateTxt"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nghĩa tiếng Việt"
+        android:ems="10"
+        android:id="@+id/meanUpdateTxt"
+        />
+    <EditText
+        android:inputType="textCapSentences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Ghi chú"
+        android:ems="10"
+        android:id="@+id/noteUpdateTxt"
+        />
+    <Button
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="update"
+        android:textAllCaps="true"
+        android:id="@+id/updateBtn"
+        />
+</LinearLayout>

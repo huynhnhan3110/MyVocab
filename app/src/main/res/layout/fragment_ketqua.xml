@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        app:layout_marginLeftPercent="5%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="2%"
+
+        app:layout_marginBottomPercent="5%"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="106dp"
+
+            android:layout_height="106dp"
+            app:lottie_rawRes="@raw/congratulationmot"
+            app:lottie_loop="true"
+            android:layout_centerHorizontal="true"
+            app:lottie_autoPlay="true" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_below="@id/animation_view"
+            android:layout_marginBottom="25dp"
+            android:text="Chúc mừng!\n Từ mới đã được thêm."
+            android:id="@+id/chucmungtext"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chucmungtext"
+            android:id="@+id/result"
+            android:minHeight="250dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:background="@drawable/mybackgroundthemtu">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Word"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:textAlignment="center"
+                android:layout_marginTop="29dp"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:id="@+id/wordResult"/>
+            <TextView
+                android:textSize="23sp"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wordResult"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:textAlignment="center"
+                android:text="Mean\n    mean"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/wordTransVNResult"/>
+            <View
+                android:layout_below="@id/wordTransVNResult"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#f0bd48"
+                android:paddingBottom="10dip"
+                android:id="@+id/hrmean"
+                />
+            <TextView
+                android:id="@+id/noteResult"
+                android:layout_below="@+id/hrmean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:layout_margin="25dp"
+                android:text="Nothing"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="43dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/result"
+            android:orientation="horizontal">
+            <Button
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/backtoadd"
+                android:layout_weight="3"
+                android:text="Thêm từ mới"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="7"/>
+            <Button
+                android:id="@+id/startLearnFromAdd"
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:text="Bắt đầu học"/>
+        </LinearLayout>
+    </RelativeLayout>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+</RelativeLayout>

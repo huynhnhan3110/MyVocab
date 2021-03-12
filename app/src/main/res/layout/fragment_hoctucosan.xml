@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.hoctucosan.HocTuCoSanFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativelayouthoctucosan">
+
+        <ImageButton
+            android:id="@+id/arrowRightHoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_48"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:layout_alignEnd="@+id/horizontalProgress"
+            android:contentDescription="arrowright" />
+        <ImageButton
+            android:id="@+id/arrowLeftHoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_keyboard_arrow_left_48"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/horizontalProgress"
+            android:contentDescription="arrowleft" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/horizontalProgress"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/exitinstantLearn"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbackgroundbutton"
+                android:src="@drawable/ic_baseline_clear_24"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:progress="90"
+                android:layout_weight="1"
+                android:indeterminateOnly="false"
+                android:progressDrawable="@drawable/pb_drawable_2"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_height="24dp"
+                /><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60%"
+            android:textColor="#ffb33b"
+            android:id="@+id/progressText"
+            android:layout_marginRight="3dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        </LinearLayout>
+
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Đã thuộc"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:id="@+id/buttonnext"/>-->
+
+
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonprevious"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:text="Chưa thuộc" />-->
+        <androidx.percentlayout.widget.PercentRelativeLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+            android:id="@+id/percentlayout"
+            android:layout_height="fill_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/tuvunglayout"
+        android:layout_height="250dp"
+        android:background="@drawable/hoctu_gradientone"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginRightPercent="10%"
+
+        android:layout_centerVertical="true">
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewpaper"/>
+
+    </RelativeLayout>
+
+
+        </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
