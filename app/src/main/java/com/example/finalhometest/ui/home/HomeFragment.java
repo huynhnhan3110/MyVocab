@@ -181,6 +181,7 @@ public class HomeFragment extends Fragment {
         DataSource mDatasource = new DataSource(getContext());
         mDatasource.open();
         mDatasource.deleteBieuDo();
+
         mDatasource.close();
         editor.putInt("isDelete",0); // neu ngay mo cuoi cung chua cap nhat thi cap nhat tai day
         // ey t da xoa bang roi nha, dung goi lai tao nua.

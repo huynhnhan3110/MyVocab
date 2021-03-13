@@ -74,14 +74,30 @@ public class DataSource {
     public void deleteBieuDo() {
        mDatabase.delete("bangtuantu",null,null);
     }
+
     public void deleteCBTu() {
         mDatabase.delete("bangtucb",null,null);
+    }
+    public void deleteBangXemTu() {
+        mDatabase.delete("bangxemtu",null,null);
     }
     // select
     public Cursor getWordFromDB() {
         Cursor cursor = mDatabase.query(
                 SQLiteHelper.TABLE_WORDCORE, //table
                 new String[] {SQLiteHelper.COLUMN_WORD, SQLiteHelper.COLUMN_TRANSL_VN, SQLiteHelper.COLUMN_NOTE}, //column names
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        return cursor;
+    }
+    public Cursor getWordFromTempViewTable() {
+        Cursor cursor = mDatabase.query(
+                "bangxemtu", //table
+                new String[] {"tienganh", "nghia", "ghichu"}, //column names
                 null,
                 null,
                 null,
@@ -233,6 +249,16 @@ public class DataSource {
         mDatabase.replace("bangtucb",null,contentValues);
         return true;
     }
+    public Boolean insertToBangXemTu(String english, String vn, String note) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("tienganh",english);
+        contentValues.put("nghia",vn);
+        contentValues.put("ghichu",note);
+        mDatabase.replace("bangxemtu",null,contentValues);
+        return true;
+    }
+
+
     public void insertWordToDB(String word, String transl_vn, String note) {
         mDatabase.beginTransaction();
 

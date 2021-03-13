@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="#fff"
+    app:contentPadding="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TableLayout
+            android:layout_width="39dp"
+            android:gravity="center"
+            android:layout_height="match_parent">
+            <TableRow
+                android:layout_marginLeft="-5dp"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/sothutu"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="1"
+                    android:textSize="20sp"/>
+            </TableRow>
+        </TableLayout>
+        <TableLayout
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableRow>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Word: "
+                    android:textColor="#000"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="#000"
+                    android:id="@+id/wordtxt"
+                    android:text="Word here"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Mean: "
+                    android:textColor="#000"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="#000"
+                    android:id="@+id/meantxt"
+                    android:text="Mean here"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Note: "
+                    android:textColor="#000"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="#000"
+                    android:id="@+id/notetxt"
+                    android:text="Note here"/>
+            </TableRow>
+
+        </TableLayout>
+        <TableLayout
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <ImageButton
+                    android:src="@drawable/ic_baseline_border_color_24"
+                    android:text="edit"
+                    android:visibility="gone"
+                    android:focusable="false"
+                    android:id="@+id/editRecordBtn"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    />
+            </TableRow>
+            <TableRow>
+                <ImageButton
+                    android:visibility="gone"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    android:focusable="false"
+                    android:id="@+id/removeRecordBtn"
+                    android:layout_height="wrap_content"
+                    android:text="remove"
+                    android:layout_width="wrap_content"
+                    />
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

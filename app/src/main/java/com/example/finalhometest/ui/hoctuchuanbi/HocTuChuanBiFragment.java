@@ -215,7 +215,11 @@ public class HocTuChuanBiFragment extends Fragment {
 
             customDialog.FullNameListener listener = newfrinput -> {
                 if(Integer.parseInt(newfrinput) > mDataSource.countRowLearned()) {
-                    Toast.makeText(getContext(),"Số từ bạn nhập lớn hơn số từ đã được học",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"Hiện tại bạn chưa thêm từ bên ngoài, nên bạn sẽ ôn lại các từ vừa mới học",Toast.LENGTH_LONG).show();
+                    editor.putString("sotu", newfrinput); // Storing string
+                    editor.commit();
+                    startIntent(R.id.nav_ontuchuanbi);
+
                 } else if(Integer.parseInt(newfrinput) == 0){
                     Toast.makeText(getContext(),"Vui lòng thực hiện lại",Toast.LENGTH_SHORT).show();
                 }
