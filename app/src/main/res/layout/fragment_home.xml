@@ -20,6 +20,7 @@
             android:layout_centerHorizontal="true"
             app:civ_border_color="#FF9800"/>
         <TextView
+
             android:layout_below="@id/avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,10 +28,10 @@
             android:layout_centerHorizontal="true"
             android:textColor="#F86D6D"
             android:layout_marginTop="10dp"
-
+            android:textStyle="bold"
             android:textSize="25sp"
-            android:fontFamily="@font/utmsharmay"
-            android:layout_marginBottom="50dp"
+            android:fontFamily="@font/fonttrangchu"
+            android:layout_marginBottom="30dp"
             android:id="@+id/yourname"/>
 
 
@@ -40,45 +41,42 @@
             android:id="@+id/titletwo"
             android:paddingRight="20dp"
             android:paddingLeft="10dp"
-
             android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/titleimg1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_baseline_timeline_24"/>
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="23sp"
-                android:layout_toRightOf="@id/titleimg1"
-                android:fontFamily="@font/utmsharmay"
+                android:textColor="#b28a8a"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/yournamebackground"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="15dp"
+                android:textAlignment="center"
+                android:paddingLeft="15dp"
+                android:fontFamily="@font/cooperblack"
                 android:text="Điểm danh mỗi ngày "
                 android:id="@+id/month"/>
 
-            <View
-                android:layout_below="@id/month"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="5dp"
-                android:background="#E6DFD5D5"></View>
+
         </RelativeLayout>
 
         <com.applandeo.materialcalendarview.CalendarView
             android:layout_marginTop="10dp"
             android:id="@+id/calendarView"
             android:layout_below="@+id/titletwo"
-            android:layout_width="match_parent"
-            app:headerColor="#1a237e"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="33dp"
+            app:headerColor="#bac0a4"
             app:headerLabelColor="#fff"
             app:daysLabelsColor="#fff"
-            app:abbreviationsBarColor="#303f9f"
+            app:abbreviationsBarColor="#bac0a4"
             app:abbreviationsLabelsColor="#fff"
-            app:pagesColor="#3f51b5"
+            app:pagesColor="#bac0a4"
             android:layout_centerHorizontal="true"
             app:firstDayOfWeek="monday"
-            app:todayLabelColor="#FFEB3B"
+            app:todayLabelColor="#FFFFFF"
             android:layout_height="wrap_content"/>
 <!--        app:previousButtonSrc="@drawable/arrow_left_24_month"-->
 <!--        app:forwardButtonSrc="@drawable/arrow_right_24_month"-->
@@ -91,21 +89,22 @@
             android:paddingRight="20dp"
             android:paddingLeft="10dp"
             android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/titleimg2"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:src="@drawable/ic_baseline_verified_24"/>
+
 
             <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="15dp"
+            android:textAlignment="center"
+            android:paddingLeft="15dp"
             android:layout_height="wrap_content"
             android:textSize="23sp"
-            android:layout_toRightOf="@+id/titleimg2"
-            android:fontFamily="@font/utmsharmay"
+            android:fontFamily="@font/cooperblack"
             android:text="Thành tích của bạn "
-
+                android:textColor="#b28a8a"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/yournamebackground"
             android:id="@+id/chucnangketiep"/>
             <View
                 android:layout_below="@id/chucnangketiep"
@@ -114,32 +113,39 @@
                 android:layout_marginTop="5dp"
                 android:background="#E6DFD5D5"></View>
         </RelativeLayout>
-        <TextView
-            android:id="@+id/textviewgiaithich"
-            android:layout_below="@id/titlethree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Show ra hết để coi, chừng nào thống nhất về cách tính này thì sẽ ẩn đi và hiện theo thực tế"/>
         <HorizontalScrollView
             android:id="@+id/horizontalbadge"
             android:layout_width="wrap_content"
-            android:layout_below="@+id/textviewgiaithich"
-            android:layout_height="wrap_content">
+            android:layout_below="@+id/titlethree"
+            android:layout_height="200dp">
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:visibility="visible"
+                        android:padding="14dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/badges1"
+                        android:layout_height="150dp"
+                        android:src="@drawable/badges1"/>
+                    <TextView
+                        android:layout_below="@+id/badges1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:textSize="32sp"
+                        />
+                </RelativeLayout>
+
                 <ImageView
-                    android:layout_width="100dp"
-                    android:visibility="visible"
-                    android:padding="14dp"
-                    android:id="@+id/badges1"
-                    android:layout_height="100dp"
-                    android:src="@drawable/badges1"/>
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
                     android:visibility="visible"
                     android:padding="14dp"
                     android:id="@+id/badges2"
@@ -178,20 +184,20 @@
 
             android:paddingLeft="10dp"
             android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/theodoiimg"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_baseline_add_chart_24"/>
 
             <TextView
-
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="15dp"
+                android:textAlignment="center"
+                android:paddingLeft="15dp"
                 android:id="@+id/theodoithemtu"
-                android:layout_width="wrap_content"
-                android:layout_toRightOf="@id/theodoiimg"
+                android:layout_width="match_parent"
+                android:textColor="#b28a8a"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/yournamebackground"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/utmsharmay"
+                android:fontFamily="@font/cooperblack"
                 android:text="Theo dõi thêm từ "
                 android:textSize="23sp" />
             <View

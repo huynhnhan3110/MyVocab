@@ -21,7 +21,7 @@ import com.example.finalhometest.R;
 import static android.app.Activity.RESULT_OK;
 
 public class GopYFragment extends Fragment {
-    private final String APP_NAME = "English Learn";
+    private final String APP_NAME = "NOAH - My Vocab";
 
     private EditText edt1, edt2;
     private TextView tvAttachment;
@@ -39,18 +39,16 @@ public class GopYFragment extends Fragment {
 
         bt.setOnClickListener(v -> {
             Intent i = new Intent(Intent.ACTION_SEND);
+
             i.setType("message/html");
             i.putExtra(Intent.EXTRA_EMAIL, new String[]{"hotro.ntloteam@gmail.com"});
             i.putExtra(Intent.EXTRA_SUBJECT, "Feedback from "+APP_NAME);
             i.putExtra(Intent.EXTRA_TEXT, "Name: "+edt1.getText()+"\n Message: "+edt2.getText());
-            try {
-                if (URI != null) {
-                    i.putExtra(Intent.EXTRA_STREAM, URI);
-                }
-                startActivity(Intent.createChooser(i, "Vui lòng chọn Gmail"));
-            }catch (ActivityNotFoundException e) {
-                Toast.makeText(getContext(), "Bạn chưa chọn phương thức gửi", Toast.LENGTH_SHORT).show();
-            }
+
+                    i.putExtra(Intent.EXTRA_STREAM, Uri.parse("mailto:"));
+
+                startActivity(i);
+
         });
         attach.setOnClickListener(v -> openFolder());
         return root;

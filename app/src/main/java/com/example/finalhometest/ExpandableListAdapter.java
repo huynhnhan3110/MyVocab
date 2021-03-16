@@ -105,65 +105,77 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         TextView lblListHeader = convertView.findViewById(R.id.lblListHeader);
 //        lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle);
-
+        lblListHeader.setTextColor(Color.parseColor("#863266"));
         lblListHeader.setCompoundDrawablePadding(20);
         switch (groupPosition) {
             case 0:
                img = convertView.getContext().getDrawable(R.drawable.ic_baseline_home_24);
-                img.setTint(Color.BLACK);
+                img.setTint(Color.parseColor("#863266"));
                 img.setBounds(0, 0, 60, 60);
                 lblListHeader.setCompoundDrawables(img,null,null,null);
 
-                convertView.setBackgroundColor(Color.YELLOW);
+                convertView.setBackgroundColor(Color.parseColor("#e6c0cb"));
                 break;
             case 1:
                 img = convertView.getContext().getDrawable(R.drawable.ic_baseline_account_circle_24);
-                img.setTint(Color.BLACK);
+                img.setTint(Color.parseColor("#863266"));
                 img.setBounds(0, 0, 60, 60);
                 lblListHeader.setCompoundDrawables(img,null,null,null);
 
-                convertView.setBackgroundColor(Color.LTGRAY);
+                convertView.setBackgroundColor(Color.parseColor("#e6c0cb"));
                 break;
             case 2:
                 img = convertView.getContext().getDrawable(R.drawable.ic_baseline_add_circle_24);
-                img.setTint(Color.BLACK);
+                img.setTint(Color.parseColor("#863266"));
                 img.setBounds(0, 0, 60, 60);
                 lblListHeader.setCompoundDrawables(img,null,null,null);
 
-                convertView.setBackgroundColor(Color.MAGENTA);
+                convertView.setBackgroundColor(Color.parseColor("#e6c0cb"));
                 break;
             case 3:
                 img = convertView.getContext().getDrawable(R.drawable.ic_baseline_format_list_numbered_rtl_24);
                 Drawable imgDropDown = convertView.getContext().getDrawable(R.drawable.ic_baseline_keyboard_arrow_down_24);
-                img.setTint(Color.BLACK);
+                img.setTint(Color.parseColor("#863266"));
                 img.setBounds(0, 0, 60, 60);
 
-                imgDropDown.setTint(Color.BLACK);
+                imgDropDown.setTint(Color.parseColor("#863266"));
                 imgDropDown.setBounds(0, 0, 60, 60);
                 lblListHeader.setCompoundDrawables(img,null,imgDropDown,null);
 
-                convertView.setBackgroundColor(Color.parseColor("#4893f0"));
+                convertView.setBackgroundColor(Color.parseColor("#e6c0cb"));
                 break;
+
             case 4:
                 img = convertView.getContext().getDrawable(R.drawable.ic_baseline_style_24);
-                img.setTint(Color.BLACK);
+                imgDropDown = convertView.getContext().getDrawable(R.drawable.ic_baseline_keyboard_arrow_down_24);
+                img.setTint(Color.parseColor("#863266"));
                 img.setBounds(0, 0, 60, 60);
-                lblListHeader.setCompoundDrawables(img,null,null,null);
-                convertView.setBackgroundColor(Color.CYAN);
+
+                imgDropDown.setTint(Color.parseColor("#863266"));
+                imgDropDown.setBounds(0, 0, 60, 60);
+                lblListHeader.setCompoundDrawables(img,null,imgDropDown,null);
+                convertView.setBackgroundColor(Color.parseColor("#e6c0cb"));
                 break;
             case 5:
                 img = convertView.getContext().getDrawable(R.drawable.ic_baseline_style_24);
-                img.setTint(Color.BLACK);
+                img.setTint(Color.parseColor("#863266"));
                 img.setBounds(0, 0, 60, 60);
                 lblListHeader.setCompoundDrawables(img,null,null,null);
-                convertView.setBackgroundColor(Color.LTGRAY);
+                convertView.setBackgroundColor(Color.parseColor("#e6c0cb"));
                 break;
             case 6:
                 img = convertView.getContext().getDrawable(R.drawable.ic_baseline_mark_email_unread_24);
-                img.setTint(Color.BLACK);
+                img.setTint(Color.parseColor("#863266"));
                 img.setBounds(0, 0, 60, 60);
                 lblListHeader.setCompoundDrawables(img,null,null,null);
-                convertView.setBackgroundColor(Color.RED);
+                convertView.setBackgroundColor(Color.parseColor("#e6c0cb"));
+                break;
+            case 7:
+                img = convertView.getContext().getDrawable(R.drawable.ic_baseline_mark_email_unread_24);
+                img.setTint(Color.parseColor("#863266"));
+                img.setBounds(0, 0, 60, 60);
+                lblListHeader.setCompoundDrawables(img,null,null,null);
+                convertView.setBackgroundColor(Color.parseColor("#e6c0cb"));
                 break;
         }
 

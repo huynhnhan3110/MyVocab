@@ -374,6 +374,19 @@ public class MainActivity extends AppCompatActivity {
             childList.put(menuModel, childModelsList);
         }
 
+        menuModel = new MenuModel("Kiểm tra", true, true, 0); //Menu of Java Tutorials
+        headerList.add(menuModel);
+        List<MenuModel> childModelsList2 = new ArrayList<>();
+        MenuModel childModel2 = new MenuModel(" 10 từ", false, false, R.id.nav_kiemtra);
+        childModelsList2.add(childModel2);
+
+        childModel2 = new MenuModel(" Kiểm tra tất cả", false, false, 0);
+        childModelsList2.add(childModel2);
+
+        if (menuModel.hasChildren) {
+            childList.put(menuModel, childModelsList2);
+        }
+
 
         menuModel = new MenuModel("Học từ vựng có sẵn", true, false, R.id.nav_tuchuanbi); //Menu of Android Tutorial. No sub menus
         headerList.add(menuModel);

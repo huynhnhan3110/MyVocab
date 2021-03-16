@@ -108,13 +108,15 @@ public class HomeFragment extends Fragment {
 
             yVals1.add(new BarEntry(i, newVal));
         }
-        BarDataSet set1 = new BarDataSet(yVals1, "Số từ đã thêm");
+        BarDataSet set1 = new BarDataSet(yVals1, "SỐ TỪ ĐÃ THÊM");
         set1.setColors(ColorTemplate.MATERIAL_COLORS);
         ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
         dataSets.add(set1);
 
-        final String[] labels = new String[] {"Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy",
-                "Chủ nhật"};
+        final String[] labels = new String[] {
+                "THỨ HAI", "THỨ BA", "THỨ TƯ", "THỨ NĂM", "THỨ SÁU", "THỨ BẢY",
+                "CHỦ NHẬT"
+        };
         bchart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
         bchart.getXAxis().setGranularity(1f);
         bchart.getXAxis().setGranularityEnabled(true);
@@ -149,7 +151,7 @@ public class HomeFragment extends Fragment {
             int year = Integer.parseInt(cursor.getString(0));
             int month = Integer.parseInt(cursor.getString(1));
             int day = Integer.parseInt(cursor.getString(2));
-            events.add(new EventDay(getCalendar(year,month,day),R.drawable.ic_baseline_stars_24));
+            events.add(new EventDay(getCalendar(year,month,day),R.drawable.ic_baseline_starlili));
         }
         cursor.close();
         CalendarView calendarView = root.findViewById(R.id.calendarView);

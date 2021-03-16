@@ -132,11 +132,20 @@ public class ThemTuFragment extends Fragment {
                     sotuthemlientuc--;
                     consecutiveNumTv.setText("Còn "+sotuthemlientuc+" từ nữa");
                     if(sotuthemlientuc <= 0) {
-
-
-
                         NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
-                        navController.navigate(R.id.nav_ketquathemtu);
+
+                        if(pref.getString("isLienTuc","").equals("true")) {
+
+                            navController.navigate(R.id.nav_ketquathemnhieututu);
+                            SharedPreferences.Editor editor = pref.edit();
+                            editor.putString("isLienTuc","");
+                            editor.commit();
+                        } else {
+                            navController.navigate(R.id.nav_ketquathemtu);
+                        }
+
+
+
 //                        FragmentTransaction a = requireActivity().getSupportFragmentManager().beginTransaction();
 //                        a.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
 //                        a.addToBackStack(null);

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -14,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -26,7 +24,7 @@ import com.example.finalhometest.R;
 import com.example.finalhometest.helper.DataSource;
 import com.example.finalhometest.helper.SQLiteHelper;
 
-public class KetQuaFragment extends Fragment {
+public class KetQuaThemNhieuTuFragment extends Fragment {
     protected DataSource mDataSource;
     protected TextView wordResult, wordTranslVNResult, noteResult;
     protected Button startlearnFromAdd;
@@ -34,7 +32,7 @@ public class KetQuaFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_ketqua, container, false);
+        View root = inflater.inflate(R.layout.fragment_ketquanhieutu, container, false);
         getActivity().invalidateOptionsMenu();
 
         startlearnFromAdd = root.findViewById(R.id.startLearnFromAdd);
@@ -55,9 +53,6 @@ public class KetQuaFragment extends Fragment {
         startlearnFromAdd = root.findViewById(R.id.startLearnFromAdd);
 
 
-        wordResult = root.findViewById(R.id.wordResult);
-        wordTranslVNResult = root.findViewById(R.id.wordTransVNResult);
-        noteResult = root.findViewById(R.id.noteResult);
 
         hrmean = root.findViewById(R.id.hrmean);
 
@@ -72,7 +67,6 @@ public class KetQuaFragment extends Fragment {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     showForgotDialog(getContext());
-
                 }
             });
             dialogDelete.setNegativeButton("Không", new DialogInterface.OnClickListener() {
@@ -95,41 +89,6 @@ public class KetQuaFragment extends Fragment {
     }
 
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        mDataSource.open();
-
-        Cursor cursor = mDataSource.getWordFromDB();
-        updateToTextView(cursor);
-    }
-
-    public void updateToTextView(Cursor cursor) {
-        cursor.moveToFirst();
-        while(!cursor.isAfterLast()) {
-            int wordIndex = cursor.getColumnIndex(SQLiteHelper.COLUMN_WORD);
-            int transl_vnIndex = cursor.getColumnIndex(SQLiteHelper.COLUMN_TRANSL_VN);
-            int noteIndex = cursor.getColumnIndex(SQLiteHelper.COLUMN_NOTE);
-
-            String word = cursor.getString(wordIndex);
-            String transl_vn = cursor.getString(transl_vnIndex);
-            String note = cursor.getString(noteIndex);
-
-            wordResult.setText(word);
-            wordTranslVNResult.setText(transl_vn);
-            if(note.equals("")) {
-               noteResult.setVisibility(View.GONE);
-               hrmean.setVisibility(View.GONE);
-
-            } else {
-                noteResult.setText(note);
-                noteResult.setVisibility(View.VISIBLE);
-                hrmean.setVisibility(View.VISIBLE);
-            }
-
-            cursor.moveToNext();
-        }
-    }
 
     @Override
     public void onPause() {
@@ -161,7 +120,6 @@ public class KetQuaFragment extends Fragment {
 
 
                         editor.putString("consecutiveNumbers",task);
-                        editor.putString("isLienTuc","true");
                         editor.commit();
 
                         requireActivity().onBackPressed();

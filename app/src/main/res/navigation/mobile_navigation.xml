@@ -24,6 +24,12 @@
         tools:layout="@layout/fragment_tuchuanbi" >
     </fragment>
     <fragment
+        android:id="@+id/nav_kiemtra"
+        android:name="com.example.finalhometest.ui.kiemtra.KiemTraFragment"
+        android:label="Kiểm tra fragment"
+        tools:layout="@layout/fragment_kiemtra" >
+    </fragment>
+    <fragment
         android:id="@+id/nav_themtuvung"
         android:name="com.example.finalhometest.ui.themtu.ThemTuFragment"
         android:label="Thêm từ vựng"
@@ -63,11 +69,15 @@
 
 
     <fragment
+        android:id="@+id/nav_ketquathemnhieututu"
+        android:name="com.example.finalhometest.ui.ketquathemtu.KetQuaThemNhieuTuFragment"
+        android:label="Kết quả thêm nhieu từ"
+        tools:layout="@layout/fragment_ketquanhieutu" />
+    <fragment
         android:id="@+id/nav_ketquathemtu"
         android:name="com.example.finalhometest.ui.ketquathemtu.KetQuaFragment"
         android:label="Kết quả thêm từ"
         tools:layout="@layout/fragment_ketqua" />
-
     <fragment
         android:id="@+id/nav_hoclai"
         android:name="com.example.finalhometest.ui.hoclaitu.HocLaiTuFragment"
