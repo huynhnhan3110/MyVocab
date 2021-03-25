@@ -13,6 +13,7 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,7 @@ public class OnTuChuanbiFragment extends Fragment {
     private List<Integer> numbersRandom; // create array int to store total row
     private TextView progressText, frontcard, backcard;
     private int propr = 1;
+    protected int countRow;
     // flip card
     private Animator front_anim;
     private Animator back_anim;
@@ -78,30 +80,51 @@ public class OnTuChuanbiFragment extends Fragment {
         mDataSource = new DataSource(getContext());
         mDataSource.open();
 
+        if(mDataSource.countRowLearned() == 0) {
+            countRow = 20;
+        } else {
+            countRow = mDataSource.countRowLearned();
+        }
 
-        int countRow = mDataSource.countRowLearned(); // get total row from database
-
+         // get total row from database
         numbersRandom = new ArrayList<Integer>(countRow); // create array int to store total row
         for (int i = countRow-1; i >=0; i--) {
             numbersRandom.add(i); // add the integer from zero to lastRow
         }
 
         Collections.shuffle(numbersRandom); // shuffle arrary to change the other of array.
+        if(countRow == 20) { // truong hop khong co tu nao trong csdl thi lay tu co san ra on.
 
-        if(mDataSource.getWordRowFromDB(numbersRandom.get(vitri),"1") != null) {
+            Cursor cursorBanDau2 = mDataSource.getWordRowFromCB(numbersRandom.get(vitri));
+            while (cursorBanDau2.moveToNext()){
+                CBupdateToTextView(cursorBanDau2);
+                // insert to table
+                mDataSource.insertToBangXemTu(cursorBanDau2.getString(0),
+                                                cursorBanDau2.getString(1),
+                                                "");
+            }
+        } else if(mDataSource.getWordRowFromDB(numbersRandom.get(vitri),"1") != null) {
             Cursor cursorBanDau = null;
             if (Math.random() > 0.5) {
                 cursorBanDau = mDataSource.getWordRowFromDB(numbersRandom.get(vitri),"1");
                 while (cursorBanDau.moveToNext()){
                     updateToTextView(cursorBanDau);
+                    // insert to table
+                    mDataSource.insertToBangXemTu(cursorBanDau.getString(0),
+                            cursorBanDau.getString(1),
+                            cursorBanDau.getString(2));
                 }
-            }else {
+            }
+            else {
                 cursorBanDau = mDataSource.getWordRowFromCB(numbersRandom.get(vitri));
                 while (cursorBanDau.moveToNext()){
                     CBupdateToTextView(cursorBanDau);
+                    // insert to table
+                    mDataSource.insertToBangXemTu(cursorBanDau.getString(0),
+                            cursorBanDau.getString(1),
+                            "");
                 }
             }
-
 
         }
 
@@ -185,17 +208,38 @@ public class OnTuChuanbiFragment extends Fragment {
                     updateProgress();
                 }
             }
-                if(vitri <= countRow-1) {
+            String sotu = pref.getString("sotu", null);
+
+                if(countRow==20 && propr < Integer.parseInt(sotu)+1) {
+                    Cursor cursor2 = mDataSource.getWordRowFromCB(numbersRandom.get(vitri));
+                    while(cursor2.moveToNext()) {
+                        CBupdateToTextView(cursor2);
+                        // insert to table
+                        mDataSource.insertToBangXemTu(cursor2.getString(0),
+                                cursor2.getString(1),
+                                "");
+                    }
+                    vitri++;
+                }
+                else if(vitri <= countRow-1 && propr < Integer.parseInt(sotu)+1) {
                     Cursor cursor = null;
                     if (Math.random() > 0.5) {
                         cursor = mDataSource.getWordRowFromDB(numbersRandom.get(vitri),"1");
                         while(cursor.moveToNext()) {
                             updateToTextView(cursor);
+                            // insert to table
+                            mDataSource.insertToBangXemTu(cursor.getString(0),
+                                    cursor.getString(1),
+                                    cursor.getString(2));
                         }
                     }else {
                         cursor = mDataSource.getWordRowFromCB(numbersRandom.get(vitri));
                         while(cursor.moveToNext()) {
                             CBupdateToTextView(cursor);
+                            // insert to table
+                            mDataSource.insertToBangXemTu(cursor.getString(0),
+                                    cursor.getString(1),
+                                    "");
                         }
                     }
 
@@ -255,7 +299,7 @@ public class OnTuChuanbiFragment extends Fragment {
         Button trove = relativeLayoutResult.findViewById(R.id.trovebtn);
         Button onlai = relativeLayoutResult.findViewById(R.id.onlaibtn);
         xemtu.setOnClickListener(v -> {
-            startIntent(R.id.nav_listviewRecord);
+            startIntent(R.id.nav_listviewRecordXemTuSauOn);
         });
 
         onlai.setOnClickListener(v -> {

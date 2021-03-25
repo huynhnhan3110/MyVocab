@@ -41,11 +41,46 @@ public class DataSource {
 
         mDatabase.insert(SQLiteHelper.TABLE_WORDCORE,null,values);
     }
-
+    public void insertDiem(int sodiem, String id) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("id",id);
+        contentValues.put("sodiem",sodiem);
+        mDatabase.replace("bangdiem",null,contentValues);
+    }
+    public void insertLevel(String id, int number) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("id",id);
+        contentValues.put("num",number);
+        mDatabase.replace("level",null,contentValues);
+    }
     public Cursor getbyWord() {
         Cursor cursor = mDatabase.query(
                 SQLiteHelper.TABLE_WORDCORE, //table
                 new String[] {SQLiteHelper.COLUMN_WORD}, //column names
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        return cursor;
+    }
+    public Cursor getDiem() {
+        Cursor cursor = mDatabase.query(
+               "bangdiem", //table
+                new String[] {"sodiem"}, //column names
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        return cursor;
+    }
+    public Cursor getLevel() {
+        Cursor cursor = mDatabase.query(
+                "level", //table
+                new String[] {"num"}, //column names
                 null,
                 null,
                 null,
@@ -74,14 +109,33 @@ public class DataSource {
     public void deleteBieuDo() {
        mDatabase.delete("bangtuantu",null,null);
     }
+    public void deleteBangDiem() {
+        mDatabase.delete("bangdiem",null,null);
+    }
+
     public void deleteCBTu() {
         mDatabase.delete("bangtucb",null,null);
+    }
+    public void deleteBangXemTu() {
+        mDatabase.delete("bangxemtu",null,null);
     }
     // select
     public Cursor getWordFromDB() {
         Cursor cursor = mDatabase.query(
                 SQLiteHelper.TABLE_WORDCORE, //table
                 new String[] {SQLiteHelper.COLUMN_WORD, SQLiteHelper.COLUMN_TRANSL_VN, SQLiteHelper.COLUMN_NOTE}, //column names
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        return cursor;
+    }
+    public Cursor getWordFromTempViewTable() {
+        Cursor cursor = mDatabase.query(
+                "bangxemtu", //table
+                new String[] {"tienganh", "nghia", "ghichu"}, //column names
                 null,
                 null,
                 null,
@@ -233,6 +287,16 @@ public class DataSource {
         mDatabase.replace("bangtucb",null,contentValues);
         return true;
     }
+    public Boolean insertToBangXemTu(String english, String vn, String note) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("tienganh",english);
+        contentValues.put("nghia",vn);
+        contentValues.put("ghichu",note);
+        mDatabase.replace("bangxemtu",null,contentValues);
+        return true;
+    }
+
+
     public void insertWordToDB(String word, String transl_vn, String note) {
         mDatabase.beginTransaction();
 

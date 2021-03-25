@@ -8,10 +8,10 @@
     <application
         android:hardwareAccelerated="true"
         android:allowBackup="false"
-        android:icon="@mipmap/opacity"
+        android:icon="@mipmap/ava1"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/opacity_round"
+        android:roundIcon="@mipmap/ava1_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalHomeTest">
         <activity

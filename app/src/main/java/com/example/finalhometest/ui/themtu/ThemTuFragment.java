@@ -10,6 +10,8 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -53,6 +55,10 @@ public class ThemTuFragment extends Fragment {
         }
 
         wordEdit = root.findViewById(R.id.editWord);
+        wordEdit.requestFocus();
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(wordEdit, InputMethodManager.SHOW_FORCED);
+
         translVNEdit = root.findViewById(R.id.editNghia);
         noteEdit = root.findViewById(R.id.editLuuY);
 
@@ -132,11 +138,20 @@ public class ThemTuFragment extends Fragment {
                     sotuthemlientuc--;
                     consecutiveNumTv.setText("Còn "+sotuthemlientuc+" từ nữa");
                     if(sotuthemlientuc <= 0) {
-
-
-
                         NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
-                        navController.navigate(R.id.nav_ketquathemtu);
+
+                        if(pref.getString("isLienTuc","").equals("true")) {
+
+                            navController.navigate(R.id.nav_ketquathemnhieututu);
+                            SharedPreferences.Editor editor = pref.edit();
+                            editor.putString("isLienTuc","");
+                            editor.commit();
+                        } else {
+                            navController.navigate(R.id.nav_ketquathemtu);
+                        }
+
+
+
 //                        FragmentTransaction a = requireActivity().getSupportFragmentManager().beginTransaction();
 //                        a.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
 //                        a.addToBackStack(null);

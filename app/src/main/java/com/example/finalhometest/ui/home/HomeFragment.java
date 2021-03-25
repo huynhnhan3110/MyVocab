@@ -108,13 +108,15 @@ public class HomeFragment extends Fragment {
 
             yVals1.add(new BarEntry(i, newVal));
         }
-        BarDataSet set1 = new BarDataSet(yVals1, "Số từ đã thêm");
+        BarDataSet set1 = new BarDataSet(yVals1, "SỐ TỪ ĐÃ THÊM");
         set1.setColors(ColorTemplate.MATERIAL_COLORS);
         ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
         dataSets.add(set1);
 
-        final String[] labels = new String[] {"Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy",
-                "Chủ nhật"};
+        final String[] labels = new String[] {
+                "THỨ HAI", "THỨ BA", "THỨ TƯ", "THỨ NĂM", "THỨ SÁU", "THỨ BẢY",
+                "CHỦ NHẬT"
+        };
         bchart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(labels));
         bchart.getXAxis().setGranularity(1f);
         bchart.getXAxis().setGranularityEnabled(true);
@@ -149,14 +151,15 @@ public class HomeFragment extends Fragment {
             int year = Integer.parseInt(cursor.getString(0));
             int month = Integer.parseInt(cursor.getString(1));
             int day = Integer.parseInt(cursor.getString(2));
-            events.add(new EventDay(getCalendar(year,month,day),R.drawable.ic_baseline_stars_24));
+            events.add(new EventDay(getCalendar(year,month,day),R.drawable.ic_baseline_starlili));
+
         }
         cursor.close();
         CalendarView calendarView = root.findViewById(R.id.calendarView);
         calendarView.setEvents(events);
 
-        ImageView bg1 = root.findViewById(R.id.badges1);
-        ImageView bg2 = root.findViewById(R.id.badges2);
+        ImageView bg1 = root.findViewById(R.id.dhlv1);
+        ImageView bg2 = root.findViewById(R.id.dhperfect);
         // hiển thị badges nếu học được bao nhiêu từ tương ứng.
         int sotudahoc = mDataSource.countRowLearned();
         if(sotudahoc >= 5) {
@@ -168,11 +171,15 @@ public class HomeFragment extends Fragment {
         // hiển thị badges nếu duy trì streek được bao nhiêu ngày tương ứng.
         int songaystreek = mDataSource.countRowStreek();
         mDataSource.close();
-        if(songaystreek >= 2) {
+
+        SharedPreferences pref5= getContext().getSharedPreferences("diem", 0); // 0 - for private mode
+
+        if(pref5.getInt("isPerfect",0) == 1) {
             bg2.setVisibility(View.VISIBLE);
             editor.putString("sothanhtich","2");
             editor.commit();
         }
+
 
         return root;
     }
@@ -181,6 +188,7 @@ public class HomeFragment extends Fragment {
         DataSource mDatasource = new DataSource(getContext());
         mDatasource.open();
         mDatasource.deleteBieuDo();
+
         mDatasource.close();
         editor.putInt("isDelete",0); // neu ngay mo cuoi cung chua cap nhat thi cap nhat tai day
         // ey t da xoa bang roi nha, dung goi lai tao nua.

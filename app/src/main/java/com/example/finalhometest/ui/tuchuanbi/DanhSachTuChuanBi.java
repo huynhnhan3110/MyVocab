@@ -55,6 +55,7 @@ public class DanhSachTuChuanBi extends Fragment {
         DataSource mDataSource = new DataSource(getContext());
         mDataSource.open();
         mDataSource.deleteCBTu();
+        mDataSource.deleteBangXemTu();
         mDataSource.close();
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
