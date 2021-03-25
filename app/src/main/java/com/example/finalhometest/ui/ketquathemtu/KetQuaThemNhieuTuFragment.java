@@ -34,8 +34,9 @@ public class KetQuaThemNhieuTuFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_ketquanhieutu, container, false);
         getActivity().invalidateOptionsMenu();
+        Button backtoadd = root.findViewById(R.id.backtoaddnhieutu);
+        startlearnFromAdd = root.findViewById(R.id.startLearnFromAddNhieutu);
 
-        startlearnFromAdd = root.findViewById(R.id.startLearnFromAdd);
         startlearnFromAdd.setOnClickListener(v -> {
 //                int maxNumberNotLearn = mDataSource.getNotLearnWord();
 //                Toast.makeText(getContext(),"Na: "+maxNumberNotLearn,Toast.LENGTH_SHORT).show();
@@ -49,8 +50,7 @@ public class KetQuaThemNhieuTuFragment extends Fragment {
         });
         mDataSource = new DataSource(getContext());
 
-        Button backtoadd = root.findViewById(R.id.backtoadd);
-        startlearnFromAdd = root.findViewById(R.id.startLearnFromAdd);
+
 
 
 
@@ -88,7 +88,11 @@ public class KetQuaThemNhieuTuFragment extends Fragment {
         return root;
     }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        mDataSource.open();
+    }
 
     @Override
     public void onPause() {

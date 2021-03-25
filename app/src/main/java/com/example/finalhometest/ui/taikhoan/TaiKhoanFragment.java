@@ -54,10 +54,17 @@ public class TaiKhoanFragment extends Fragment {
         Button changeUsername = root.findViewById(R.id.bt1);
         Button changeUsermoti = root.findViewById(R.id.bt3);
         TextView TvUserMotivation = root.findViewById(R.id.userMotivation);
+        TextView diem = root.findViewById(R.id.diem);
+
         pref = getContext().getSharedPreferences("UserMotivation", 0); // 0 - for private mode
         editor = pref.edit();
         if(pref.getString("textMoti", null) != null) {
             TvUserMotivation.setText(pref.getString("textMoti",""));
+        }
+
+        SharedPreferences pref3 = getContext().getSharedPreferences("SotuMuonOn", 0);
+        if(pref3.getInt("diem", 0) != 0) {
+            diem.setText(pref3.getInt("diem",0)+"");
         }
 
         img1 = root.findViewById(R.id.img1);

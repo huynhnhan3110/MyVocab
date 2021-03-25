@@ -152,13 +152,14 @@ public class HomeFragment extends Fragment {
             int month = Integer.parseInt(cursor.getString(1));
             int day = Integer.parseInt(cursor.getString(2));
             events.add(new EventDay(getCalendar(year,month,day),R.drawable.ic_baseline_starlili));
+
         }
         cursor.close();
         CalendarView calendarView = root.findViewById(R.id.calendarView);
         calendarView.setEvents(events);
 
-        ImageView bg1 = root.findViewById(R.id.badges1);
-        ImageView bg2 = root.findViewById(R.id.badges2);
+        ImageView bg1 = root.findViewById(R.id.dhlv1);
+        ImageView bg2 = root.findViewById(R.id.dhperfect);
         // hiển thị badges nếu học được bao nhiêu từ tương ứng.
         int sotudahoc = mDataSource.countRowLearned();
         if(sotudahoc >= 5) {
@@ -170,11 +171,15 @@ public class HomeFragment extends Fragment {
         // hiển thị badges nếu duy trì streek được bao nhiêu ngày tương ứng.
         int songaystreek = mDataSource.countRowStreek();
         mDataSource.close();
-        if(songaystreek >= 2) {
+
+        SharedPreferences pref5= getContext().getSharedPreferences("diem", 0); // 0 - for private mode
+
+        if(pref5.getInt("isPerfect",0) == 1) {
             bg2.setVisibility(View.VISIBLE);
             editor.putString("sothanhtich","2");
             editor.commit();
         }
+
 
         return root;
     }

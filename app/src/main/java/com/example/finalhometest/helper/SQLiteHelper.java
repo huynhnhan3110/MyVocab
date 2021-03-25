@@ -36,6 +36,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("create table bangtuantu(thu text primary key, sotu text default 0 not null)");
         db.execSQL("create table bangtucb(tienganh text primary key, nghia text)");
         db.execSQL("create table bangxemtu(tienganh text primary key, nghia text, ghichu text)");
+        db.execSQL("create table bangdiem(id integer primary key, sodiem integer)");
+        db.execSQL("create table level(id integer primary key, num integer default 0)");
         db.execSQL(CREATE_TABLE);
     }
 

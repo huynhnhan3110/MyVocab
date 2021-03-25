@@ -30,6 +30,12 @@
         tools:layout="@layout/fragment_kiemtra" >
     </fragment>
     <fragment
+        android:id="@+id/nav_ketquakiemtra"
+        android:name="com.example.finalhometest.ui.kiemtra.KetQuaKiemTraFragment"
+        android:label="KQ Kiểm tra fragment"
+        tools:layout="@layout/fragment_ketquakiemtra" >
+    </fragment>
+    <fragment
         android:id="@+id/nav_themtuvung"
         android:name="com.example.finalhometest.ui.themtu.ThemTuFragment"
         android:label="Thêm từ vựng"

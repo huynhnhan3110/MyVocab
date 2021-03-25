@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:textColor="#b28a8a"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/yournamebackground"
@@ -99,9 +99,9 @@
             android:textAlignment="center"
             android:paddingLeft="15dp"
             android:layout_height="wrap_content"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:fontFamily="@font/cooperblack"
-            android:text="Thành tích của bạn "
+            android:text="Danh hiệu của bạn "
                 android:textColor="#b28a8a"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/yournamebackground"
@@ -113,67 +113,59 @@
                 android:layout_marginTop="5dp"
                 android:background="#E6DFD5D5"></View>
         </RelativeLayout>
+
+
         <HorizontalScrollView
             android:id="@+id/horizontalbadge"
             android:layout_width="wrap_content"
+            android:layout_height="200dp"
             android:layout_below="@+id/titlethree"
-            android:layout_height="200dp">
+            android:layout_marginTop="0dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:visibility="visible"
-                        android:padding="14dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:id="@+id/badges1"
-                        android:layout_height="150dp"
-                        android:src="@drawable/badges1"/>
-                    <TextView
-                        android:layout_below="@+id/badges1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="10"
-                        android:textSize="32sp"
-                        />
-                </RelativeLayout>
+
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:visibility="visible"
-                    android:padding="14dp"
-                    android:id="@+id/badges2"
-                    android:src="@drawable/badges2"/>
+
+                    android:id="@+id/dhlv1"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="-30dp"
+                    android:src="@drawable/dh_lv1"
+                    android:visibility="visible" />
                 <ImageView
-                    android:padding="14dp"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:visibility="visible"
-                    android:src="@drawable/badges3"/>
+                    android:id="@+id/dhperfect"
+                    android:layout_width="200dp"
+
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dh_perfect"
+                    android:visibility="gone" />
                 <ImageView
-                    android:padding="14dp"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:visibility="visible"
-                    android:src="@drawable/badges4"/>
+                    android:id="@+id/dhlv2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dh_lv2"
+                    android:visibility="gone" />
+
                 <ImageView
-                    android:padding="14dp"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:visibility="visible"
-                    android:src="@drawable/badges2"/>
+                    android:layout_width="200dp"
+                    android:layout_marginLeft="-30dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dh_lv3"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_marginLeft="-30dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dh_perfect"
+                    android:visibility="gone" />
             </LinearLayout>
         </HorizontalScrollView>
-
-
-
-
 
         <RelativeLayout
             android:layout_marginTop="10dp"
@@ -199,7 +191,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cooperblack"
                 android:text="Theo dõi thêm từ "
-                android:textSize="23sp" />
+                android:textSize="20sp" />
             <View
                 android:layout_below="@id/theodoithemtu"
                 android:layout_width="match_parent"

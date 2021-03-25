@@ -7,34 +7,36 @@
     android:layout_height="match_parent"
     tools:context=".ui.kiemtra.KiemTraFragment">
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:id="@+id/horizontalProgress"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:30"
+            android:textSize="34sp"
+            android:textColor="#F44336"
+            android:layout_gravity="center"
+            android:id="@+id/clocktext"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animation_view"
-            android:layout_width="206dp"
-            android:layout_marginTop="-40dp"
-            android:layout_height="206dp"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
             app:lottie_rawRes="@raw/clock"
+            android:layout_marginLeft="-26dp"
             app:lottie_loop="true"
             android:layout_centerHorizontal="true"
             app:lottie_autoPlay="true" />
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="00:30"
-            android:layout_marginTop="-30dp"
-        android:textSize="34sp"
-        android:textColor="#F44336"
-        android:id="@+id/clocktext"
-        android:layout_marginRight="3dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layouttest"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
@@ -42,7 +44,7 @@
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
-
+            android:id="@+id/englishWordTest"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textStyle="bold"
@@ -50,12 +52,14 @@
             android:text="Word"/>
 
         <EditText
+            android:id="@+id/meaningAnswer"
             android:layout_marginTop="50dp"
             android:hint="Nhập nghĩa của từ"
             android:gravity="center"
             android:ems="10"
             android:maxLength="30"
-            android:textSize="30sp"
+            android:singleLine="true"
+            android:textSize="25sp"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,6 +80,28 @@
         android:layout_marginBottom="15dp"
         android:text="Enter" />
 
-
-
+    <LinearLayout
+        android:layout_below="@id/layouttest"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:id="@+id/cointlayout"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view2"
+            android:layout_width="106dp"
+            android:layout_below="@+id/layouttest"
+            android:layout_height="106dp"
+            app:lottie_rawRes="@raw/coin"
+            app:lottie_autoPlay="true" />
+        <TextView
+            android:layout_below="@id/animation_view2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:layout_marginLeft="-20dp"
+            android:layout_toRightOf="@id/animation_view2"
+            android:text="+1"/>
+    </LinearLayout>
 </RelativeLayout>

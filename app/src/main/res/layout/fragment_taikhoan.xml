@@ -109,18 +109,13 @@
         android:layout_marginBottom="12dp"
         android:layout_marginTop="20dp"/>
 
-    <LinearLayout
-        android:weightSum="3"
-        android:id="@+id/thanhtichrow1"
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_weight="1"
             android:id="@+id/daystreek"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:padding="0dp"
+            android:padding="4dp"
             android:backgroundTint="#B3A211"
             android:background="@drawable/mybackgroundtaikhoan"
             android:layout_height="wrap_content">
@@ -155,8 +150,9 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:padding="0dp"
-            android:layout_margin="5dp"
+            android:padding="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:backgroundTint="#F44336"
             android:background="@drawable/mybackgroundtaikhoan"
             android:layout_height="wrap_content">
@@ -191,7 +187,7 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:padding="0dp"
+            android:padding="4dp"
             android:backgroundTint="#673AB7"
             android:background="@drawable/mybackgroundtaikhoan"
             android:layout_height="wrap_content">
@@ -223,7 +219,6 @@
             </LinearLayout>
         </LinearLayout>
 
-    </LinearLayout>
 
 
 </LinearLayout>

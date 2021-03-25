@@ -41,11 +41,46 @@ public class DataSource {
 
         mDatabase.insert(SQLiteHelper.TABLE_WORDCORE,null,values);
     }
-
+    public void insertDiem(int sodiem, String id) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("id",id);
+        contentValues.put("sodiem",sodiem);
+        mDatabase.replace("bangdiem",null,contentValues);
+    }
+    public void insertLevel(String id, int number) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("id",id);
+        contentValues.put("num",number);
+        mDatabase.replace("level",null,contentValues);
+    }
     public Cursor getbyWord() {
         Cursor cursor = mDatabase.query(
                 SQLiteHelper.TABLE_WORDCORE, //table
                 new String[] {SQLiteHelper.COLUMN_WORD}, //column names
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        return cursor;
+    }
+    public Cursor getDiem() {
+        Cursor cursor = mDatabase.query(
+               "bangdiem", //table
+                new String[] {"sodiem"}, //column names
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        return cursor;
+    }
+    public Cursor getLevel() {
+        Cursor cursor = mDatabase.query(
+                "level", //table
+                new String[] {"num"}, //column names
                 null,
                 null,
                 null,
@@ -73,6 +108,9 @@ public class DataSource {
     }
     public void deleteBieuDo() {
        mDatabase.delete("bangtuantu",null,null);
+    }
+    public void deleteBangDiem() {
+        mDatabase.delete("bangdiem",null,null);
     }
 
     public void deleteCBTu() {

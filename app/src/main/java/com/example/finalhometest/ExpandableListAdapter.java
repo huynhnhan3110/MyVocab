@@ -146,7 +146,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                 break;
 
             case 4:
-                img = convertView.getContext().getDrawable(R.drawable.ic_baseline_style_24);
+                img = convertView.getContext().getDrawable(R.drawable.ic_baseline_checklist_24);
                 imgDropDown = convertView.getContext().getDrawable(R.drawable.ic_baseline_keyboard_arrow_down_24);
                 img.setTint(Color.parseColor("#863266"));
                 img.setBounds(0, 0, 60, 60);

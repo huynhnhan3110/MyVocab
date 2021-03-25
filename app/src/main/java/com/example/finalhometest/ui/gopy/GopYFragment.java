@@ -44,10 +44,14 @@ public class GopYFragment extends Fragment {
             i.putExtra(Intent.EXTRA_EMAIL, new String[]{"hotro.ntloteam@gmail.com"});
             i.putExtra(Intent.EXTRA_SUBJECT, "Feedback from "+APP_NAME);
             i.putExtra(Intent.EXTRA_TEXT, "Name: "+edt1.getText()+"\n Message: "+edt2.getText());
-
-                    i.putExtra(Intent.EXTRA_STREAM, Uri.parse("mailto:"));
-
-                startActivity(i);
+            try {
+                if (URI != null) {
+                    i.putExtra(Intent.EXTRA_STREAM, URI);
+                }
+                startActivity(Intent.createChooser(i, "Vui lòng chọn Gmail"));
+            }catch (ActivityNotFoundException e) {
+                Toast.makeText(getContext(), "Bạn chưa chọn phương thức gửi", Toast.LENGTH_SHORT).show();
+            }
 
         });
         attach.setOnClickListener(v -> openFolder());
