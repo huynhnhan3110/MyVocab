@@ -61,6 +61,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="SEND"
+        android:autoLink="email"
         android:textColor="#fff"
         android:background="@drawable/buttonsendbackground"
         android:textSize="20sp"

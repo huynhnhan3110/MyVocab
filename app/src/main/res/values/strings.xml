@@ -20,18 +20,20 @@
     <string name="material_calendar_sunday">CN</string>
 
     <array name="material_calendar_months_array">
-        <item>Tháng một</item>
-        <item>Tháng hai</item>
-        <item>Tháng ba</item>
-        <item>Tháng tư</item>
-        <item>Tháng năm</item>
-        <item>Tháng sáu</item>
-        <item>Tháng bảy</item>
-        <item>Tháng tám</item>
-        <item>Tháng chín</item>
-        <item>Tháng mười</item>
-        <item>Tháng mười một</item>
-        <item>Tháng mười hai</item>
+
+        <item>THÁNG MỘT</item>
+        <item>THÁNG HAI</item>
+        <item>THÁNG BA</item>
+        <item>THÁNG TƯ</item>
+        <item>THÁNG NĂM</item>
+        <item>THÁNG SÁU</item>
+        <item>THÁNG BẢY</item>
+        <item>THÁNG TÁM</item>
+        <item>THÁNG CHÍN</item>
+        <item>THÁNG MƯỜI</item>
+        <item>THÁNG MƯỜI MỘT</item>
+        <item>THÁNG MƯỜI HAI</item>
+
     </array>
 
     <string name="material_calendar_today_button">Hôm nay</string>

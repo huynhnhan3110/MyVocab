@@ -47,10 +47,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Đã thuộc"
+        android:background="@drawable/tieptucbackground"
+
+
         android:layout_marginRight="23dp"
         android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:id="@+id/buttonnext"/>
 
     <Button
@@ -59,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="23dp"
+        android:visibility="gone"
         android:layout_marginBottom="15dp"
         android:text="Chưa thuộc" />
     <TextView

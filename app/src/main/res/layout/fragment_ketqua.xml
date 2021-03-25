@@ -30,6 +30,7 @@
             android:textSize="18sp"
             android:gravity="center"
             android:layout_below="@id/animation_view"
+            android:fontFamily="@font/aptima"
             android:layout_marginBottom="25dp"
             android:text="Chúc mừng!\n Từ mới đã được thêm."
             android:id="@+id/chucmungtext"/>

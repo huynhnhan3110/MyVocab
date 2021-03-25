@@ -44,16 +44,20 @@
 
 
     <Button
+        android:background="@drawable/tieptucbackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Đã thuộc"
+        android:text="Tiếp tục"
+        android:backgroundTint="@color/disabledDialogButtonColor"
+        android:layout_centerHorizontal="true"
         android:layout_marginRight="23dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="25dp"
+
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:id="@+id/buttonnext"/>
 
     <Button
+        android:visibility="gone"
         android:id="@+id/buttonprevious"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

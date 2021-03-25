@@ -280,7 +280,37 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Bạn chưa thêm từ nào",Toast.LENGTH_SHORT).show();
                     return false;
                 };
-                if(childPosition == 0) {
+                if(childPosition == 0 && groupPosition == 4) {
+                    if( sotudangco < 10) {
+                        Toast.makeText(getApplicationContext(),"Hiện tại bạn chỉ có "+sotudangco+" từ",Toast.LENGTH_SHORT).show();
+                        return false;
+                    } else {
+                        editor.putString("sotukiemtra", "10"); // Storing string
+                    }
+                    editor.commit();
+                    NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment);
+                    navController.navigate(R.id.nav_kiemtra);
+                }
+                if(childPosition == 1 && groupPosition == 4) {
+                    if( sotudangco < 20) {
+                        Toast.makeText(getApplicationContext(),"Hiện tại bạn chỉ có "+sotudangco+" từ",Toast.LENGTH_SHORT).show();
+                        return false;
+                    } else {
+                        editor.putString("sotukiemtra", "20"); // Storing string
+                    }
+                    editor.commit();
+                    NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment);
+                    navController.navigate(R.id.nav_kiemtra);
+                }
+
+                if(childPosition == 2 && groupPosition == 4) {
+                    editor.putString("sotukiemtra", "");
+                    editor.commit();
+                    NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment);
+                    navController.navigate(R.id.nav_kiemtra);
+                }
+
+                if(childPosition == 0 && groupPosition == 3) {
                     if( sotudangco < 10) {
                         Toast.makeText(getApplicationContext(),"Hiện tại bạn chỉ có "+sotudangco+" từ",Toast.LENGTH_SHORT).show();
                         return false;
@@ -292,7 +322,7 @@ public class MainActivity extends AppCompatActivity {
                     NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment);
                     navController.navigate(R.id.nav_ontu);
                 }
-                if(childPosition == 1) {
+                if(childPosition == 1 && groupPosition == 3) {
                     if( sotudangco < 20) {
                         Toast.makeText(getApplicationContext(),"Hiện tại bạn chỉ có "+sotudangco+" từ",Toast.LENGTH_SHORT).show();
                         return false;
@@ -303,14 +333,14 @@ public class MainActivity extends AppCompatActivity {
                     NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment);
                     navController.navigate(R.id.nav_ontu);
                 }
-                if(childPosition == 2) {
+                if(childPosition == 2 && groupPosition == 3) {
                     int giamdi = mDataSource.countRowLearned();
                     editor.putString("sotu", giamdi+""); // Storing string
                     editor.commit();
                     NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment);
                     navController.navigate(R.id.nav_ontu);
                 }
-                if(childPosition == 3) {
+                if(childPosition == 3 && groupPosition ==3) {
 
                     TextView txtListChild = v.findViewById(R.id.lblListItem);
                     Drawable img = v.getContext().getDrawable(R.drawable.ic_baseline_radio_button_checked_24);
@@ -372,6 +402,23 @@ public class MainActivity extends AppCompatActivity {
         childModelsList.add(childModel);
         if (menuModel.hasChildren) {
             childList.put(menuModel, childModelsList);
+        }
+
+        menuModel = new MenuModel("Kiểm tra", true, true, 0); //Menu of Java Tutorials
+        headerList.add(menuModel);
+        List<MenuModel> childModelsList2 = new ArrayList<>();
+        MenuModel childModel2 = new MenuModel(" 10 từ", false, false, 0);
+        childModelsList2.add(childModel2);
+
+        childModel2 = new MenuModel(" 20 từ", false, false, 0);
+        childModelsList2.add(childModel2);
+
+        childModel2 = new MenuModel(" Kiểm tra tất cả", false, false, 0);
+        childModelsList2.add(childModel2);
+
+
+        if (menuModel.hasChildren) {
+            childList.put(menuModel, childModelsList2);
         }
 
 

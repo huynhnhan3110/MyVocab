@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        app:layout_marginLeftPercent="5%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="2%"
+        android:layout_centerVertical="true"
+        app:layout_marginBottomPercent="5%"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="130dp"
+
+            android:layout_height="130dp"
+            app:lottie_rawRes="@raw/congratulationmot"
+            app:lottie_loop="true"
+            android:layout_centerHorizontal="true"
+            app:lottie_autoPlay="true" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:fontFamily="@font/aptima"
+            android:gravity="center"
+            android:layout_below="@id/animation_view"
+            android:layout_marginBottom="25dp"
+            android:text="Chúc mừng!\n Các từ mới đã được thêm."
+            android:id="@+id/chucmungtext"/>
+
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="43dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/chucmungtext"
+            android:orientation="horizontal">
+            <Button
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/backtoaddnhieutu"
+                android:layout_weight="3"
+                android:text="Thêm từ mới"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="7"/>
+            <Button
+                android:id="@+id/startLearnFromAddNhieutu"
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:text="Bắt đầu học"/>
+        </LinearLayout>
+    </RelativeLayout>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+</RelativeLayout>

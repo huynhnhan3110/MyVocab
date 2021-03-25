@@ -72,6 +72,7 @@ public class KetQuaFragment extends Fragment {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     showForgotDialog(getContext());
+
                 }
             });
             dialogDelete.setNegativeButton("Không", new DialogInterface.OnClickListener() {
@@ -160,6 +161,7 @@ public class KetQuaFragment extends Fragment {
 
 
                         editor.putString("consecutiveNumbers",task);
+                        editor.putString("isLienTuc","true");
                         editor.commit();
 
                         requireActivity().onBackPressed();
